@@ -6,12 +6,7 @@ export class PingController {
   constructor(private readonly pingService: PingService) {}
 
   @Get()
-  ping() {
-    return this.pingService.ping();
-  }
-
-  @Get('health')
-  health() {
-    return this.pingService.healthCheck();
+  async ping() {
+    return await this.pingService.healthCheck();
   }
 }
